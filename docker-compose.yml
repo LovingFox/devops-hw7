@@ -6,6 +6,5 @@ services:
     volumes:
       - ./:/git
     command: [
-      "sh -c ",
-      "rm -f done.lock && clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git && touch done.lock",
+      "clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git && cd boxfuse-sample-java-war-hello && touch done.lock",
     ]
