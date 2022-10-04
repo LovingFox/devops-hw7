@@ -12,7 +12,7 @@ services:
         target: /webapps
 
   web:
-    # based on alpine:3.16
+    # based on adoptopenjdk/openjdk11:jre-11.0.6_10-alpine
     build:
       context: .
       dockerfile: Dockerfile.alpine
