@@ -1,10 +1,7 @@
 ---
 version: "3.9"
 services:
-  git:
-    image: alpine/git
-    volumes:
-      - ./:/git
-    command: [
-      "clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git && cd boxfuse-sample-java-war-hello && touch done.lock",
-    ]
+  maven:
+    build: .
+  volumes:
+    - ./webapps:/webapps
