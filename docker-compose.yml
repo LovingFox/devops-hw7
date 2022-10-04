@@ -5,4 +5,7 @@ services:
     image: alpine/git
     volumes:
       - ./:/git
-    command: ["clone", "https://github.com/boxfuse/boxfuse-sample-java-war-hello.git"]
+    command: [
+      "sh -c ",
+      "rm -f done.lock && clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git && touch done.lock",
+    ]
