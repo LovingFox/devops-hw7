@@ -4,4 +4,6 @@ services:
   maven:
     build: .
   volumes:
-    - ./webapps:/webapps
+    - type: bind
+      source: ./webapps
+      target: /webapps
