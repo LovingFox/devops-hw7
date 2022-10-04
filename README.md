@@ -1,7 +1,6 @@
 # devops-hw7
 
-Maven builds an artefact from 'boxfuse-sample-java-war-hello'
-Tomcat run webserver with the artefact
+Maven builds an artefact from 'boxfuse-sample-java-war-hello', Tomcat runs webserver with the artefact
 
 **maven:3.8-eclipse-temurin-11-alpine + tomcat:9.0.67-jre11**
 
