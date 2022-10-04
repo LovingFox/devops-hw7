@@ -1,0 +1,30 @@
+---
+version: "3.9"
+services:
+  maven:
+    # based on maven:3.8-eclipse-temurin-11-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - type: volume
+        source: webapps
+        target: /webapps
+
+  web:
+    # based on alpine:3.16
+    build:
+      context: .
+      dockerfile: Dockerfile.alpine
+    volumes:
+      - type: volume
+        source: webapps
+        target: /opt/tomcat/webapps/
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+        mode: host
+
+volumes:
+  webapps:

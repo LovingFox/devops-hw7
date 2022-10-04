@@ -1,0 +1,6 @@
+FROM alpine:3.16
+RUN apk update &&
+    apk add openjdk11-jre-headless
+WORKDIR /opt/tomcat
+RUN wget -qO- https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.67/bin/apache-tomcat-9.0.67.tar.gz | tar xvz --strip-components 1
+CMD ["/opt/tomcat/bin/catalina.sh", "run"]
