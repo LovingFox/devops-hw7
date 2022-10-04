@@ -3,7 +3,3 @@ version: "3.9"
 services:
   maven:
     build: .
-  volumes:
-    - type: bind
-      source: ./webapps
-      target: /webapps
