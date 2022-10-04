@@ -1,5 +1,8 @@
 # devops-hw7
 
+Maven builds an artefact from 'boxfuse-sample-java-war-hello'
+Tomcat run webserver with the artefact
+
 Install:
 
     git clone https://github.com/LovingFox/devops-hw7.git
