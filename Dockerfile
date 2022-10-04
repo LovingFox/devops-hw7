@@ -4,5 +4,6 @@ RUN apk update && \
 WORKDIR /
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git && \
     cd boxfuse-sample-java-war-hello
-WORKDIR boxfuse-sample-java-war-hello
-CMD mvn package && cp target/hello-*.war /webapps/ROOT.war
+CMD cd /boxfuse-sample-java-war-hello && \
+    mvn package && \
+    cp target/hello-*.war /webapps/ROOT.war
