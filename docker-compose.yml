@@ -1,0 +1,8 @@
+---
+version: "3.9"
+services:
+  git:
+    image: alpine/git
+    volumes:
+      - $(pwd):/git
+    command: ["clone", "https://github.com/boxfuse/boxfuse-sample-java-war-hello.git"]
