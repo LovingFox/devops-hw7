@@ -2,8 +2,23 @@
 version: "3.9"
 services:
   maven:
-    build: .
+    # based on maven:3.8-eclipse-temurin-11-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - type: bind
         source: ./webapps
         target: /webapps
+
+  web:
+    image: tomcat:9.0.67-jre11
+    volumes:
+      - type: bind
+        source: ./webapps
+        target: /usr/local/tomcat/webapps/
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+        mode: host
