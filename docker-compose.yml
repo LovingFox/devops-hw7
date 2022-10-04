@@ -4,5 +4,5 @@ services:
   git:
     image: alpine/git
     volumes:
-      - $(pwd):/git
+      - ./:/git
     command: ["clone", "https://github.com/boxfuse/boxfuse-sample-java-war-hello.git"]
